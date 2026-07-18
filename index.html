@@ -67,10 +67,10 @@
     <p class="kicker center">Onze uitgelichte keuze</p>
     <h2 class="center">LET'S DO IT Personal Training: vóór vrouwen, dóór vrouwen</h2>
     <p class="intro">Van alle aanbieders die we bekeken, sluit LET'S DO IT het meest logisch aan bij vrouwen die met een vrouwelijke trainster willen werken.</p>
-    <div class="spotlight">
+    <div class="spotlight ldi">
       <img src="images/49.jpeg" alt="Vrouwelijke personal trainster van een training aan huis">
       <div class="body">
-        <span class="ribbon">Spotlight</span>
+        <span class="ribbon">Vóór vrouwen, dóór vrouwen</span>
         <h3>Waarom LET'S DO IT eruit springt</h3>
         <p>LET'S DO IT verzorgt sinds 2007 personal training aan huis en buiten, speciaal vóór vrouwen dóór vrouwen. Het team bestaat uit ruim 80 vrouwelijke personal trainsters met specialisaties in onder meer zwangerschap, postpartum herstel, 40+ en de overgang.</p>
         <ul class="checks">
@@ -80,7 +80,7 @@
           <li>App met 3D-oefenvideo's en gratis trainingsschema's voor thuis</li>
           <li>Gratis leefstijlwerkboek met tips over voeding, slaap en balans</li>
         </ul>
-        <a class="btn" href="https://www.letsdoitpt.nl/" rel="noopener">Bekijk LET'S DO IT</a>
+        <a class="btn ldi" href="https://www.letsdoitpt.nl/" rel="noopener">Bekijk LET'S DO IT</a>
       </div>
     </div>
   </div>
@@ -91,17 +91,19 @@
     <p class="kicker center">Ook de moeite waard</p>
     <h2 class="center">Twee andere sterke aanbieders</h2>
     <div class="cards two">
-      <div class="provider">
+      <div class="provider yh">
+        <span class="chip yh">Grootste netwerk</span>
         <h3>YourHealth Personal Training</h3>
         <p class="tag">Grootste platform voor personal training aan huis van Nederland</p>
         <p>YourHealth begeleidt sinds 2007 klanten met personal training aan huis en buiten. Het team telt ruim 100 trainers (m/v) met uiteenlopende specialisaties: van medical trainers en bokstrainers tot yoga- en pilatesdocenten. Je traint via flexibele strippenkaarten van 15 tot 200 sessies (6 tot 62 maanden geldig, €65 tot €85 per uur) en een sportmaatje traint gratis mee. Handig zijn de extra's: weekmenu's op maat vanaf €7,90 per maand, gratis trainingsschema's in de app en een gratis leefstijlwerkboek.</p>
-        <a class="btn plum" href="https://www.yourhealthpt.nl/" rel="noopener">Naar YourHealth</a>
+        <a class="btn yh" href="https://www.yourhealthpt.nl/" rel="noopener">Naar YourHealth</a>
       </div>
-      <div class="provider">
+      <div class="provider jptah">
+        <span class="chip jptah">Sterk in 40-plus</span>
         <h3>Jouw Personal Trainer aan Huis</h3>
         <p class="tag">Sterk in 40+, 50+ en herstel na klachten</p>
         <p>Jouw Personal Trainer aan Huis is een logische keuze voor wie de veertig of vijftig is gepasseerd of terugkomt na een blessure of periode van weinig bewegen. In het team zitten naast personal trainers ook fysiotherapeuten, manueel therapeuten en leefstijlcoaches. De aanpak is geleidelijk en opbouwend, met veel aandacht voor kracht, balans en mobiliteit. Trainers door heel Nederland, geen abonnement nodig en je partner mag gratis meetrainen.</p>
-        <a class="btn plum" href="https://www.jouwpersonaltraineraanhuis.nl/" rel="noopener">Naar Jouw Personal Trainer aan Huis</a>
+        <a class="btn jptah" href="https://www.jouwpersonaltraineraanhuis.nl/" rel="noopener">Naar Jouw Personal Trainer aan Huis</a>
       </div>
     </div>
   </div>
@@ -126,6 +128,27 @@
           <tr><td><strong>Specialisaties vrouw</strong></td><td>Zwangerschap, postpartum, 40+, overgang</td><td>Zwanger-en-fit trainers, trainen met vrouwelijke trainer mogelijk</td><td>Overgang, belastbaarheid, herstel</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<section id="inbeeld">
+  <div class="container">
+    <p class="kicker center">In beeld</p>
+    <h2 class="center">Personal training voor vrouwen in de praktijk</h2>
+    <p class="intro">Een korte impressie van trainen aan huis en in de buitenlucht, van krachttraining tot rustige mattraining.</p>
+    <div class="slideshow" id="slideshow">
+      <img class="slide actief" src="images/1.jpeg" alt="Trainster en klant trainen samen buiten">
+      <img class="slide" src="images/4.jpeg" alt="Krachttraining met dumbbells">
+      <img class="slide" src="images/18.jpeg" alt="Training onder persoonlijke begeleiding">
+      <img class="slide" src="images/24.jpeg" alt="Personal training op maat">
+      <img class="slide" src="images/40.jpeg" alt="Kracht en balans voor 50-plussers">
+      <img class="slide" src="images/45.jpeg" alt="Rustige training op de mat">
+      <img class="slide" src="images/49.jpeg" alt="Vrouwelijke personal trainster aan het werk">
+      <img class="slide" src="images/61.jpeg" alt="Thuis trainen op een rustig moment">
+      <button class="ss-knop ss-vorige" onclick="wisselSlide(-1)" aria-label="Vorige foto">&#10094;</button>
+      <button class="ss-knop ss-volgende" onclick="wisselSlide(1)" aria-label="Volgende foto">&#10095;</button>
+      <div class="ss-bolletjes" id="ss-bolletjes"></div>
     </div>
   </div>
 </section>
@@ -237,5 +260,36 @@
     <div class="fbottom">© 2026 PersonalTrainingvoorVrouwen.nl · Informatie op deze site is algemeen van aard en geen vervanging van medisch advies.</div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('#slideshow .slide');
+  var bolletjes = document.getElementById('ss-bolletjes');
+  var huidig = 0, timer;
+  for (var i = 0; i < slides.length; i++){
+    var b = document.createElement('span');
+    b.dataset.index = i;
+    b.addEventListener('click', function(){ toon(parseInt(this.dataset.index, 10)); start(); });
+    bolletjes.appendChild(b);
+  }
+  function toon(n){
+    slides[huidig].classList.remove('actief');
+    bolletjes.children[huidig].classList.remove('actief');
+    huidig = (n + slides.length) % slides.length;
+    slides[huidig].classList.add('actief');
+    bolletjes.children[huidig].classList.add('actief');
+  }
+  window.wisselSlide = function(richting){ toon(huidig + richting); start(); };
+  function start(){
+    clearInterval(timer);
+    timer = setInterval(function(){ toon(huidig + 1); }, 4500);
+  }
+  bolletjes.children[0].classList.add('actief');
+  var ss = document.getElementById('slideshow');
+  ss.addEventListener('mouseenter', function(){ clearInterval(timer); });
+  ss.addEventListener('mouseleave', start);
+  start();
+})();
+</script>
 </body>
 </html>
