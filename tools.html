@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gratis tools: BMI, caloriebehoefte en gezond gewicht | PersonalTrainingvoorVrouwen.nl</title>
+<meta name="description" content="Gratis rekentools voor vrouwen: bereken je BMI, je dagelijkse caloriebehoefte (Mifflin-St Jeor) en je gezonde gewichtsbereik.">
+<link rel="canonical" href="https://personaltrainingvoorvrouwen.nl/tools.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="container nav">
+    <a class="logo" href="index.html">PersonalTraining<span>voorVrouwen</span>.nl</a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="gids-overgang.html">Gids overgang</a>
+      <a href="gids-zwangerschap.html">Gids zwangerschap</a>
+      <a href="tools.html">Tools</a>
+      <a href="blog/index.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-hero">
+  <div class="container narrow">
+    <p class="kicker" style="color:#e6b9a9">Gratis tools</p>
+    <h1>Rekentools voor vrouwen</h1>
+    <p class="meta">BMI, caloriebehoefte en gezond gewichtsbereik, speciaal afgestemd op vrouwen</p>
+  </div>
+</div>
+
+<div class="container narrow" style="margin-top:40px">
+
+  <div class="tool" id="bmi">
+    <h2>BMI-calculator</h2>
+    <p>De Body Mass Index geeft een globale indruk van de verhouding tussen je gewicht en lengte. Let op: BMI zegt niets over spiermassa of vetverdeling. Gebruik het als startpunt, niet als eindoordeel.</p>
+    <label for="bmi-gewicht">Gewicht (kg)</label>
+    <input type="number" id="bmi-gewicht" min="30" max="250" step="0.1" placeholder="bijv. 68">
+    <label for="bmi-lengte">Lengte (cm)</label>
+    <input type="number" id="bmi-lengte" min="120" max="220" step="0.1" placeholder="bijv. 168">
+    <br><button class="btn" onclick="berekenBmi()">Bereken BMI</button>
+    <div class="result" id="bmi-result"></div>
+  </div>
+
+  <div class="tool" id="calorie">
+    <h2>Caloriebehoefte (vrouw)</h2>
+    <p>Deze calculator gebruikt de Mifflin-St Jeor-formule voor vrouwen om je rustmetabolisme (BMR) te schatten en vermenigvuldigt dat met je activiteitsniveau voor je dagelijkse energiebehoefte.</p>
+    <label for="cal-gewicht">Gewicht (kg)</label>
+    <input type="number" id="cal-gewicht" min="30" max="250" step="0.1" placeholder="bijv. 68">
+    <label for="cal-lengte">Lengte (cm)</label>
+    <input type="number" id="cal-lengte" min="120" max="220" step="0.1" placeholder="bijv. 168">
+    <label for="cal-leeftijd">Leeftijd (jaren)</label>
+    <input type="number" id="cal-leeftijd" min="16" max="100" step="1" placeholder="bijv. 42">
+    <label for="cal-activiteit">Activiteitsniveau</label>
+    <select id="cal-activiteit">
+      <option value="1.2">Weinig actief (zittend werk, weinig beweging)</option>
+      <option value="1.375" selected>Licht actief (1–3x per week sporten)</option>
+      <option value="1.55">Gemiddeld actief (3–5x per week sporten)</option>
+      <option value="1.725">Zeer actief (6–7x per week sporten)</option>
+    </select>
+    <br><button class="btn" onclick="berekenCalorie()">Bereken caloriebehoefte</button>
+    <div class="result" id="cal-result"></div>
+  </div>
+
+  <div class="tool" id="gewicht">
+    <h2>Gezond gewichtsbereik</h2>
+    <p>Op basis van je lengte berekent deze tool tussen welke gewichten je BMI in het gezonde bereik valt (18,5 tot 25).</p>
+    <label for="gw-lengte">Lengte (cm)</label>
+    <input type="number" id="gw-lengte" min="120" max="220" step="0.1" placeholder="bijv. 168">
+    <br><button class="btn" onclick="berekenBereik()">Bereken gezond bereik</button>
+    <div class="result" id="gw-result"></div>
+  </div>
+
+  <div class="callout">
+    <h3>Cijfers zijn een startpunt, geen doel op zich</h3>
+    <p>Getallen helpen je richting te bepalen, maar hoe je je voelt, hoe sterk je bent en hoeveel energie je hebt zeggen minstens zoveel. Wil je serieus met je doelen aan de slag met persoonlijke begeleiding? Bekijk dan onze <a href="index.html#vergelijk">vergelijking van personal trainers voor vrouwen</a>.</p>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="container">
+    <div class="fgrid">
+      <div>
+        <h4>PersonalTrainingvoorVrouwen.nl</h4>
+        <p>Onafhankelijke keuzegids voor vrouwen die op zoek zijn naar personal training aan huis of buiten.</p>
+      </div>
+      <div>
+        <h4>Pagina's</h4>
+        <p><a href="gids-overgang.html">Gids overgang</a><br>
+        <a href="gids-zwangerschap.html">Gids zwangerschap</a><br>
+        <a href="tools.html">Tools</a><br>
+        <a href="blog/index.html">Blog</a></p>
+      </div>
+      <div>
+        <h4>Aanbieders</h4>
+        <p><a href="https://www.letsdoitpt.nl/" rel="noopener">LET'S DO IT</a><br>
+        <a href="https://www.yourhealthpt.nl/" rel="noopener">YourHealth</a><br>
+        <a href="https://www.jouwpersonaltraineraanhuis.nl/" rel="noopener">Jouw Personal Trainer aan Huis</a></p>
+      </div>
+    </div>
+    <div class="fbottom">© 2026 PersonalTrainingvoorVrouwen.nl · Informatie op deze site is algemeen van aard en geen vervanging van medisch advies.</div>
+  </div>
+</footer>
+
+<script>
+function toon(id, html){
+  var el = document.getElementById(id);
+  el.innerHTML = html;
+  el.classList.add('show');
+}
+function berekenBmi(){
+  var g = parseFloat(document.getElementById('bmi-gewicht').value);
+  var l = parseFloat(document.getElementById('bmi-lengte').value) / 100;
+  if(!g || !l){ toon('bmi-result','Vul een geldig gewicht en een geldige lengte in.'); return; }
+  var bmi = g / (l*l);
+  var cat;
+  if(bmi < 18.5) cat = 'ondergewicht';
+  else if(bmi < 25) cat = 'een gezond gewicht';
+  else if(bmi < 30) cat = 'overgewicht';
+  else cat = 'ernstig overgewicht (obesitas)';
+  toon('bmi-result','Je BMI is <strong>' + bmi.toFixed(1) + '</strong>. Dit valt in de categorie: ' + cat + '.');
+}
+function berekenCalorie(){
+  var g = parseFloat(document.getElementById('cal-gewicht').value);
+  var l = parseFloat(document.getElementById('cal-lengte').value);
+  var a = parseFloat(document.getElementById('cal-leeftijd').value);
+  var act = parseFloat(document.getElementById('cal-activiteit').value);
+  if(!g || !l || !a){ toon('cal-result','Vul gewicht, lengte en leeftijd in.'); return; }
+  // Mifflin-St Jeor, vrouw: 10*kg + 6.25*cm - 5*leeftijd - 161
+  var bmr = 10*g + 6.25*l - 5*a - 161;
+  var tdee = bmr * act;
+  toon('cal-result','Je rustmetabolisme (BMR) is ongeveer <strong>' + Math.round(bmr) + ' kcal</strong> per dag. Met jouw activiteitsniveau is je totale dagelijkse behoefte ongeveer <strong>' + Math.round(tdee) + ' kcal</strong>. Wil je afvallen, dan is een tekort van 300 tot 500 kcal per dag een verantwoord uitgangspunt.');
+}
+function berekenBereik(){
+  var l = parseFloat(document.getElementById('gw-lengte').value) / 100;
+  if(!l){ toon('gw-result','Vul een geldige lengte in.'); return; }
+  var min = 18.5 * l * l;
+  var max = 25 * l * l;
+  toon('gw-result','Bij jouw lengte hoort een gezond gewichtsbereik van ongeveer <strong>' + min.toFixed(1) + ' kg</strong> tot <strong>' + max.toFixed(1) + ' kg</strong> (BMI 18,5–25).');
+}
+</script>
+</body>
+</html>
